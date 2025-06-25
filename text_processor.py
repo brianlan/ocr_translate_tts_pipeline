@@ -6,8 +6,8 @@ Text processing and cleaning service.
 from typing import Optional
 from openai import OpenAI
 
-from .config import OCRConfig
-from .retry_handler import RetryHandler
+from config import OCRConfig
+from retry_handler import RetryHandler
 
 
 class TextProcessor:
@@ -59,11 +59,12 @@ class TextProcessor:
                                    "2. Remove excessive newline characters (more than 2 consecutive \\n)\n"
                                    "3. Remove any metadata or processing comments added by OCR systems\n"
                                    "4. Remove any emoji characters\n"
-                                   "5. Fix obvious OCR errors in spacing (like 'w o r d s' -> 'words')\n"
-                                   "6. Preserve original paragraph structure and remove unnecessary line breaks\n"
-                                   "7. Keep all actual content text intact\n"
-                                   "8. Do not add any commentary, explanations, or your own text\n"
-                                   "9. Return only the cleaned text content"
+                                   "5. Remove inline references such as superscript numbers, footnote markers (e.g., [1], (1), or ^1), and any other common citation indicators embedded within the text.\n"
+                                   "6. Fix obvious OCR errors in spacing (like 'w o r d s' -> 'words')\n"
+                                   "7. Preserve original paragraph structure and remove unnecessary line breaks\n"
+                                   "8. Keep all actual content text intact\n"
+                                   "9. Do not add any commentary, explanations, or your own text\n"
+                                   "10. Return only the cleaned text content"
                     },
                     {
                         "role": "user", 
@@ -76,7 +77,7 @@ class TextProcessor:
         
         try:
             response = RetryHandler.retry_with_backoff(_make_cleaning_api_call, self.config.max_retries)
-            
+            assert response.choices, "No choices returned from API response"
             cleaned_text = response.choices[0].message.content
             if cleaned_text:
                 cleaned_text = cleaned_text.strip()

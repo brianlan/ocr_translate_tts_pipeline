@@ -1,0 +1,87 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Installer logs
+debug.log
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# mypy
+.mypy_cache/
+.dmypy.json
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Local data
+*.sqlite3
+*.db
+*.log
+
+# Access tokens and secrets
+access_token/
+*.token
+*.secret
+*.key
+*.pem
+*.p12
+*.env
+
+# Results and outputs
+*-output.wav
+*-output_raw.txt
+*-output_cleaned.txt
+*-output.txt
+*-results/
+
+# Ignore launch configs
+launch.json
+
+ocr_progress.json
+access_token

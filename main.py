@@ -17,12 +17,12 @@ import os
 
 # Handle both direct execution and module import
 if __name__ == "__main__":
-    # Add parent directory to path for direct execution
-    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    from book_ocr_tts_pipeline.cli import CLIInterface
-    from book_ocr_tts_pipeline.pipeline import BookOCRTTSPipeline
-    from book_ocr_tts_pipeline.progress_tracker import ProgressTracker
-    from book_ocr_tts_pipeline.file_manager import FileManager
+    # Add current directory to path for direct execution
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from cli import CLIInterface
+    from pipeline import BookOCRTTSPipeline
+    from progress_tracker import ProgressTracker
+    from file_manager import FileManager
 else:
     from .cli import CLIInterface
     from .pipeline import BookOCRTTSPipeline

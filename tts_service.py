@@ -10,7 +10,7 @@ from typing import List
 import edge_tts
 from pydub import AudioSegment
 
-from .config import TTSConfig
+from config import TTSConfig
 
 
 class TTSService:

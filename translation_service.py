@@ -6,8 +6,8 @@ Handles text translation using LLM.
 
 from openai import OpenAI
 
-from .config import OCRConfig
-from .retry_handler import RetryHandler
+from config import OCRConfig
+from retry_handler import RetryHandler
 
 
 class TranslationService:

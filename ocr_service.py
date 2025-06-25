@@ -8,8 +8,8 @@ import base64
 from typing import Optional
 from openai import OpenAI
 
-from .config import OCRConfig
-from .retry_handler import RetryHandler
+from config import OCRConfig
+from retry_handler import RetryHandler
 
 
 class OCRService:

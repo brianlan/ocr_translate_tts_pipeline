@@ -7,13 +7,13 @@ import os
 import time
 from typing import List, Optional
 
-from .config import PipelineConfig
-from .ocr_service import OCRService
-from .tts_service import TTSService
-from .text_processor import TextProcessor
-from .translation_service import TranslationService
-from .progress_tracker import ProgressTracker, ProcessingStats
-from .file_manager import FileManager
+from config import PipelineConfig
+from ocr_service import OCRService
+from tts_service import TTSService
+from text_processor import TextProcessor
+from translation_service import TranslationService
+from progress_tracker import ProgressTracker, ProcessingStats
+from file_manager import FileManager
 
 
 class BookOCRTTSPipeline:
